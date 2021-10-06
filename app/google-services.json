@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "44618338665",
+    "project_id": "bvenda-33cf4",
+    "storage_bucket": "bvenda-33cf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44618338665:android:1eb5c30a2c945aa267edf8",
+        "android_client_info": {
+          "package_name": "uakas.com.bvenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44618338665-c77i7s5o2hmhpfv8jcchtia1ir1ge2s5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTs1uOS1EVqY8EkI_uOoxBTLa8FXix-o8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44618338665-c77i7s5o2hmhpfv8jcchtia1ir1ge2s5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
