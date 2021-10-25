@@ -1,2 +1,2 @@
 # BVenda
-Aplicativo para Vendas
+Aplicativo para Vendas.
