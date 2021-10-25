@@ -1,2 +1,2 @@
 # BVenda
-App for sales
+Aplicativo para Vendas
