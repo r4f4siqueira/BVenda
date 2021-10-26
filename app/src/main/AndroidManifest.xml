@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BVenda">
         <activity
+            android:name=".lista"
+            android:exported="true" />
+        <activity
+            android:name=".contas"
+            android:exported="true" />
+        <activity
+            android:name=".pessoa"
+            android:exported="true" />
+        <activity
+            android:name=".compra"
+            android:exported="true" />
+        <activity
+            android:name=".venda"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
