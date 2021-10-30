@@ -10,7 +10,7 @@
     <EditText
         android:id="@+id/etCompraFornecedor"
         android:layout_width="320dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="72dp"
         android:ems="10"
@@ -22,7 +22,7 @@
     <EditText
         android:id="@+id/etCompraProduto"
         android:layout_width="320dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
@@ -55,8 +55,8 @@
 
     <Button
         android:id="@+id/btCompraPesquisaProduto"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:isScrollContainer="false"
@@ -68,7 +68,7 @@
     <EditText
         android:id="@+id/etCompraQuantidade"
         android:layout_width="86dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
@@ -79,8 +79,8 @@
 
     <Button
         android:id="@+id/btCompraPesquisaFornecedor"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="72dp"
         android:backgroundTint="#00FFFFFF"
         android:isScrollContainer="false"
@@ -91,8 +91,8 @@
 
     <Button
         android:id="@+id/btCompraPesquisa"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:isScrollContainer="false"
@@ -104,7 +104,7 @@
     <EditText
         android:id="@+id/etCompraDescricao"
         android:layout_width="320dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"

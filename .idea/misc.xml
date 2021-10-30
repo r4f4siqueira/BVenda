@@ -4,13 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Estudos/Desktop/git/BVenda/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/laboratorio/Documents/Rafael/BVenda/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.2203125" />
-        <entry key="..\:/Users/laboratorio/Documents/Rafael/BVenda/app/src/main/res/layout/activity_compra.xml" value="0.25" />
-        <entry key="..\:/Users/laboratorio/Documents/Rafael/BVenda/app/src/main/res/layout/activity_contas.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/laboratorio/Documents/Rafael/BVenda/app/src/main/res/layout/activity_lista.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/laboratorio/Documents/Rafael/BVenda/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/laboratorio/Documents/Rafael/BVenda/app/src/main/res/layout/activity_pessoa.xml" value="0.16" />
-        <entry key="..\:/Users/laboratorio/Documents/Rafael/BVenda/app/src/main/res/layout/activity_venda.xml" value="0.1933876811594203" />
+        <entry key="..\:/Users/laboratorio/Documents/GitHub/BVenda/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/laboratorio/Documents/GitHub/BVenda/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/laboratorio/Documents/GitHub/BVenda/app/src/main/res/layout/activity_compra.xml" value="0.25" />
+        <entry key="..\:/Users/laboratorio/Documents/GitHub/BVenda/app/src/main/res/layout/activity_main.xml" value="0.22" />
       </map>
     </option>
   </component>
