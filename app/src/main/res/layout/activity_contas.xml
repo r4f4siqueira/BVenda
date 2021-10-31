@@ -20,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/btPesquisaCredorDevedor"
+        android:id="@+id/btContasCredorDevedor"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="149dp"
@@ -59,11 +59,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:text="Codigo Conta:"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/brContasMenu" />
 
     <TextView
         android:id="@+id/textView3"
@@ -80,13 +80,13 @@
         android:id="@+id/tvContaCod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="16dp"
         android:text="cod"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/brContasMenu" />
 
     <TextView
         android:id="@+id/tvContaVendaCompraCod"
@@ -123,5 +123,25 @@
         app:icon="@drawable/ic_baseline_close_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/brContasMenu"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/ic_baseline_menu_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/brContasPesquisa"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        app:icon="@drawable/ic_baseline_search_24"
+        app:layout_constraintStart_toEndOf="@+id/tvContaCod"
+        app:layout_constraintTop_toBottomOf="@+id/brContasMenu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

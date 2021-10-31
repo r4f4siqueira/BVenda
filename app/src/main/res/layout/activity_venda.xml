@@ -35,13 +35,13 @@
         android:id="@+id/btVendaPesquisaCliente"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:isScrollContainer="false"
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/etVendaCliente"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btVendaPesquisaVenda" />
 
     <Button
         android:id="@+id/btVendaPesquisaVenda"
@@ -53,7 +53,7 @@
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/tvVendaCod"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
 
     <Button
         android:id="@+id/btVenda"
@@ -72,12 +72,12 @@
         android:layout_width="320dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Cliente"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/etVendaProduto"
@@ -118,10 +118,10 @@
     <ListView
         android:id="@+id/lvItensVenda"
         android:layout_width="397dp"
-        android:layout_height="349dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="250dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -141,20 +141,20 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Venda Nº:"
         android:textAlignment="textStart"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
 
     <TextView
         android:id="@+id/tvVendaCod"
         android:layout_width="102dp"
-        android:layout_height="32dp"
+        android:layout_height="40dp"
         android:layout_marginStart="108dp"
         android:layout_marginTop="16dp"
         android:text="CodVenda"
@@ -162,7 +162,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
 
     <View
         android:id="@+id/divider"
@@ -173,5 +173,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etVendaDescricao" />
+
+    <Button
+        android:id="@+id/btVendaMenu"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="menul"
+        app:icon="@drawable/ic_baseline_menu_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

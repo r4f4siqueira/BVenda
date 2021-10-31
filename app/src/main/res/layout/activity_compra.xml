@@ -12,12 +12,12 @@
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Fornecedor"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/etCompraProduto"
@@ -81,13 +81,13 @@
         android:id="@+id/btCompraPesquisaFornecedor"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:isScrollContainer="false"
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/etCompraFornecedor"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btCompraPesquisa" />
 
     <Button
         android:id="@+id/btCompraPesquisa"
@@ -99,7 +99,7 @@
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/tvCompraCod"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btCompraMenu" />
 
     <EditText
         android:id="@+id/etCompraDescricao"
@@ -139,38 +139,48 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Compra Nº:"
         android:textAlignment="textStart"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btCompraMenu" />
 
     <TextView
         android:id="@+id/tvCompraCod"
-        android:layout_width="102dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="108dp"
+        android:layout_width="94dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
-        android:text="CodCompra"
+        android:text="CodCom"
         android:textAlignment="textEnd"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btCompraMenu" />
 
     <ListView
         android:id="@+id/lvItensCompra"
         android:layout_width="396dp"
-        android:layout_height="331dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="250dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btCompraAddItem" />
+
+    <Button
+        android:id="@+id/btCompraMenu"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/ic_baseline_menu_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
