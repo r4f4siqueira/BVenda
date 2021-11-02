@@ -3,13 +3,49 @@ package uakas.com.bvenda.Entidades;
 import java.io.Serializable;
 
 public class Produto implements Serializable {
-    /*
-    create table produto (
-        codproduto serial primary key not null,
-        nome varchar(40),
-        ativo boolean,
-        valor decimal(10,2),
-        qtd_estoque int
-    );
-     */
+    private Integer codproduto;
+    private String nome;
+    private Boolean ativo;
+    private Float valor;
+    private Float qtd_estoque;
+
+    public Integer getCodproduto() {
+        return codproduto;
+    }
+
+    public void setCodproduto(Integer codproduto) {
+        this.codproduto = codproduto;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public Float getValor() {
+        return valor;
+    }
+
+    public void setValor(Float valor) {
+        this.valor = valor;
+    }
+
+    public Float getQtd_estoque() {
+        return qtd_estoque;
+    }
+
+    public void setQtd_estoque(Float qtd_estoque) {
+        this.qtd_estoque = qtd_estoque;
+    }
 }

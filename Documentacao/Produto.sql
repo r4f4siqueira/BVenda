@@ -3,6 +3,6 @@ create table produto (
 	nome varchar(40),
 	ativo boolean,
 	valor decimal(10,2),
-	qtd_estoque int
+	qtd_estoque decimal (10,2)
 );
 

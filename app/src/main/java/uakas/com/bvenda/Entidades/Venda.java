@@ -3,15 +3,40 @@ package uakas.com.bvenda.Entidades;
 import java.io.Serializable;
 
 public class Venda implements Serializable {
-    /*
-    create table compra (
-        codvenda serial primary key not null,
-        id_cliente int,
-        descricao varchar(40),
-        email varchar(40),
-        observacao varchar(40),
-        valor decimal(10,2),
-        constraint fk_venda_pessoa foreign key (id_cliente) references pessoa(id)
-    );
-     */
+    private Integer codvenda;
+    private Integer id_cliente;
+    private String descricao;
+    private Float valor;
+
+    public Integer getCodvenda() {
+        return codvenda;
+    }
+
+    public void setCodvenda(Integer codvenda) {
+        this.codvenda = codvenda;
+    }
+
+    public Integer getId_cliente() {
+        return id_cliente;
+    }
+
+    public void setId_cliente(Integer id_cliente) {
+        this.id_cliente = id_cliente;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Float getValor() {
+        return valor;
+    }
+
+    public void setValor(Float valor) {
+        this.valor = valor;
+    }
 }
