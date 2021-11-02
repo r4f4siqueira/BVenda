@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BVenda">
         <activity
+            android:name=".produto"
+            android:exported="true" />
+        <activity
             android:name=".menuLateral"
             android:exported="true" />
         <activity
