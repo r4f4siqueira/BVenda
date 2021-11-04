@@ -1,5 +1,5 @@
 create table produto (
-	codproduto serial primary key not null,
+	codproduto integer primary key autoincrement not null,
 	nome varchar(40),
 	ativo boolean,
 	valor decimal(10,2),

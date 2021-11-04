@@ -39,4 +39,12 @@ public class Compra implements Serializable {
     public void setValor(Float valor) {
         this.valor = valor;
     }
+
+    //talvez mudar em vez do id de uma entidade colocar a entidade inteira dentro da classe igual fizemos no linebyte
+    @Override
+    public String toString() {
+        return "fornecedor = " + id_fornecedor +
+                "\n descricao = " + descricao  +
+                "\n valor = " + valor;
+    }
 }

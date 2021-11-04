@@ -1,5 +1,5 @@
 create table itemcompra(
-	id serial primary key not null,
+	id serial integer primary key autoincrement not null,
 	id_compra int,
 	id_produto int,
 	quantidade decimal (10,2),

@@ -1,5 +1,5 @@
 create table conta (
-	id serial primary key not null,
+	id serial integer primary key autoincrement not null,
 	id_venda int,
 	id_compra int,
 	id_cliente int,

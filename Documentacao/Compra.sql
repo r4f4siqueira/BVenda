@@ -1,5 +1,5 @@
 create table compra (
-	codcompra serial primary key not null,
+	codcompra integer primary key autoincrement not null,
 	id_fornecedor int,
 	observacao varchar(40),
 	valor decimal(10,2),

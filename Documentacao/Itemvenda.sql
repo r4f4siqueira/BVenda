@@ -1,5 +1,5 @@
 create table itemvenda (
-	id serial primary key not null,
+	id serial integer primary key autoincrement not null,
 	id_venda int,
 	id_produto int,
 	quantidade decimal (10,2),

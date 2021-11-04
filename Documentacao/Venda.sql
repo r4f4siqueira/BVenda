@@ -1,5 +1,5 @@
 create table venda (
-	codvenda serial primary key not null,
+	codvenda integer primary key autoincrement not null,
 	id_cliente int,
 	descricao varchar(40),
 	valor decimal(10,2),
