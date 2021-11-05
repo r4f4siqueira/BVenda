@@ -2,4 +2,13 @@
     <string name="app_name">BVenda</string>
     <string name="excluir">Excluir</string>
     <string name="produto">produto</string>
+    <string name="venda">venda</string>
+    <string name="cliente">Cliente</string>
+    <string name="venda_n">Venda Nº:</string>
+    <string name="descri_o">Descrição</string>
+    <string name="codvenda">CodVenda</string>
+    <string name="valorfinal">valorFinal</string>
+    <string name="qtd">Qtd</string>
+    <string name="gerar_venda">Gerar Venda</string>
+    <string name="add">Add</string>
 </resources>

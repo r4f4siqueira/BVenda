@@ -22,9 +22,11 @@ public class venda extends AppCompatActivity {
     }
 
     public void listar (View view){
-            Button btn = (Button) view;
-            Intent it = new Intent(this, lista.class);
-            it.putExtra("entidade",btn.getLabelFor());//por algu motivo isso nao funciona
-            startActivity(it);
+        Button btn = (Button) view;
+        Intent it = new Intent(this, lista.class);
+        it.putExtra("entidade",btn.getHint().toString());//por algu motivo isso nao funciona
+        startActivity(it);
     }
+
+
 }

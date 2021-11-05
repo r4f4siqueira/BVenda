@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.Nullable;
 
@@ -18,7 +19,7 @@ public class BDDados {
         List lista = new LinkedList();
         SQLiteDatabase BDcontrole = BD.getReadableDatabase();
         //metodo generico q vc escreve a query que quiser
-        Cursor cursor = BDcontrole.query(o.getClass().getSimpleName(), campos,selecao,argumentos,null,null,null );
+        Cursor cursor = BDcontrole.query(o.getClass().getSimpleName().toLowerCase(Locale.ROOT), campos,selecao,argumentos,null,null,null );
         if(cursor.moveToFirst()){
             do {
                 //como fazer isso, só consigo pensar em switch case

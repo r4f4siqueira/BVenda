@@ -41,6 +41,7 @@ public class Compra implements Serializable {
     }
 
     //talvez mudar em vez do id de uma entidade colocar a entidade inteira dentro da classe igual fizemos no linebyte
+
     @Override
     public String toString() {
         return "fornecedor = " + id_fornecedor +

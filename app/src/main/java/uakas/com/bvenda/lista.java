@@ -11,8 +11,10 @@ import android.widget.ListView;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import uakas.com.bvenda.Banco.BDDados;
+import uakas.com.bvenda.Banco.BDSetup;
 import uakas.com.bvenda.Entidades.Compra;
 import uakas.com.bvenda.Entidades.Pessoa;
 import uakas.com.bvenda.Entidades.Produto;
@@ -24,8 +26,7 @@ public class lista extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Object> dados;
     ArrayAdapter<String> adapter;
-    private Class classe;
-
+    private Object classe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,31 +40,36 @@ public class lista extends AppCompatActivity {
     private void Atualizar() {
         Intent it = getIntent();
         if (it.getStringExtra("entidade") != null) { // por algum motivo ele nao passa aqui
-            switch (it.getStringExtra("entidade")) { // diferenciador pros botoes apertados, tem que ter coisa no "labelfor" do botao
+            switch (it.getStringExtra("entidade").toLowerCase(Locale.ROOT)) { // diferenciador pros botoes apertados, tem que ter coisa no "labelfor" do botao
                 //nao sei se null funciona com campos
                 case "cliente":
-                    dados = BDDados.Listar(Pessoa.class, getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 0});
-                    classe = pessoa.class;
+                    //dados = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 0});
+                    dados = new LinkedList<>();
+                    classe = new pessoa();
                     dados.add("pessoa");
                     break;
                 case "produto":
-                    dados = BDDados.Listar(Produto.class, getApplicationContext(), null, null, null);
-                    classe = produto.class;
+                    //dados = BDDados.Listar(new Produto(), getApplicationContext(), new String[]{"nome","valor","qtd_estoque"}, null, null);
+                    dados = new LinkedList<>();
+                    classe = new produto();
                     dados.add("produto");
                     break;
                 case "fornecedor":
-                    dados = BDDados.Listar(Pessoa.class, getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 1});
-                    classe = pessoa.class;
+                    //dados = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 1});
+                    dados = new LinkedList<>();
+                    classe = new pessoa();
                     dados.add("fornecedor");
                     break;
                 case "venda":
-                    dados = BDDados.Listar(Venda.class, getApplicationContext(), null, null, null);
-                    classe = venda.class;
+                    //dados = BDDados.Listar(new venda(), getApplicationContext(), null, null, null);
+                    dados = new LinkedList<>();
+                    classe = new venda();
                     dados.add("venda");
                     break;
                 case "compra":
-                    dados = BDDados.Listar(Compra.class, getApplicationContext(), null, null, null);
-                    classe = compra.class;
+                    //dados = BDDados.Listar(new compra(), getApplicationContext(), null, null, null);
+                    dados = new LinkedList<>();
+                    classe = new compra();
                     dados.add("compra");
                     break;
                 default:
