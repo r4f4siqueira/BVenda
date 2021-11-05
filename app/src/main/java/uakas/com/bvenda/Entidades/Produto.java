@@ -3,18 +3,18 @@ package uakas.com.bvenda.Entidades;
 import java.io.Serializable;
 
 public class Produto implements Serializable {
-    private Integer codproduto;
+    private Integer id;
     private String nome;
     private Boolean ativo;
     private Float valor;
     private Float qtd_estoque;
 
-    public Integer getCodproduto() {
-        return codproduto;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodproduto(Integer codproduto) {
-        this.codproduto = codproduto;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -47,5 +47,16 @@ public class Produto implements Serializable {
 
     public void setQtd_estoque(Float qtd_estoque) {
         this.qtd_estoque = qtd_estoque;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", ativo=" + ativo +
+                ", valor=" + valor +
+                ", qtd_estoque=" + qtd_estoque +
+                '}';
     }
 }

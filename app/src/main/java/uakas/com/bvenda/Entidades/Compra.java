@@ -3,17 +3,17 @@ package uakas.com.bvenda.Entidades;
 import java.io.Serializable;
 
 public class Compra implements Serializable {
-    private Integer codcompra;
+    private Integer id;
     private Integer id_fornecedor;
     private String descricao;
     private Float valor;
 
-    public Integer getCodcompra() {
-        return codcompra;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodcompra(Integer codcompra) {
-        this.codcompra = codcompra;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getId_fornecedor() {

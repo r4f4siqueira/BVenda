@@ -48,4 +48,15 @@ public class Conta implements Serializable {
     public void setValor(Float valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "id=" + id +
+                ", id_venda=" + id_venda +
+                ", id_compra=" + id_compra +
+                ", id_cliente=" + id_cliente +
+                ", valor=" + valor +
+                '}';
+    }
 }

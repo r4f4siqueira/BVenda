@@ -57,4 +57,16 @@ public class Pessoa implements Serializable {
     public void setFornecedor(Boolean fornecedor) {
         this.fornecedor = fornecedor;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", celular='" + celular + '\'' +
+                ", email='" + email + '\'' +
+                ", observacao='" + observacao + '\'' +
+                ", fornecedor=" + fornecedor +
+                '}';
+    }
 }

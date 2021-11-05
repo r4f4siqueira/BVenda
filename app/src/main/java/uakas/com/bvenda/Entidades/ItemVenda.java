@@ -48,4 +48,15 @@ public class ItemVenda implements Serializable {
     public void setValor_un(Float valor_un) {
         this.valor_un = valor_un;
     }
+
+    @Override
+    public String toString() {
+        return "ItemVenda{" +
+                "id=" + id +
+                ", id_venda=" + id_venda +
+                ", id_produto=" + id_produto +
+                ", quantidade=" + quantidade +
+                ", valor_un=" + valor_un +
+                '}';
+    }
 }

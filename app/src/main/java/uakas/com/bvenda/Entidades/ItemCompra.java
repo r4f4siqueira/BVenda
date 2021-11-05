@@ -48,4 +48,15 @@ public class ItemCompra implements Serializable {
     public void setValor(Float valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return "ItemCompra{" +
+                "id=" + id +
+                ", id_compra=" + id_compra +
+                ", id_produto=" + id_produto +
+                ", quantidade=" + quantidade +
+                ", valor=" + valor +
+                '}';
+    }
 }

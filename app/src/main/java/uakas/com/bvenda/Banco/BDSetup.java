@@ -24,21 +24,21 @@ public class BDSetup extends SQLiteOpenHelper {
                 "\tfornecedor boolean\n" +
                 ");");*/
         sql.append("create table produto (\n" +
-                "codproduto integer primary key autoincrement not null,\n" +
+                "id integer primary key autoincrement not null,\n" +
                 "nome       varchar(40),\n" +
                 "ativo      boolean,\n" +
                 "valor      decimal(10,2),\n" +
                 "qtd_estoque decimal (10,2)\n" +
                 ");");
         /*sql.append("create table compra (\n" +
-                "\tcodcompra integer primary key autoincrement not null,\n" +
+                "\tid integer primary key autoincrement not null,\n" +
                 "\tid_fornecedor int,\n" +
                 "\tobservacao varchar(40),\n" +
                 "\tvalor decimal(10,2),\n" +
                 "\tconstraint fk_compra_pessoa foreign key (id_fornecedor) references pessoa(id)\n" +
                 ");");
         sql.append("create table venda (\n" +
-                "\tcodvenda integer primary key autoincrement not null,\n" +
+                "\tid integer primary key autoincrement not null,\n" +
                 "\tid_cliente int,\n" +
                 "\tdescricao varchar(40),\n" +
                 "\tvalor decimal(10,2),\n" +

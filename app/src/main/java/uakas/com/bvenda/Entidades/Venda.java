@@ -3,17 +3,17 @@ package uakas.com.bvenda.Entidades;
 import java.io.Serializable;
 
 public class Venda implements Serializable {
-    private Integer codvenda;
+    private Integer id;
     private Integer id_cliente;
     private String descricao;
     private Float valor;
 
-    public Integer getCodvenda() {
-        return codvenda;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodvenda(Integer codvenda) {
-        this.codvenda = codvenda;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getId_cliente() {
@@ -38,5 +38,15 @@ public class Venda implements Serializable {
 
     public void setValor(Float valor) {
         this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        return "Venda{" +
+                "id=" + id +
+                ", id_cliente=" + id_cliente +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                '}';
     }
 }
