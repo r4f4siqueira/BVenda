@@ -21,7 +21,7 @@ public class produto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produto);
         TextoNome = findViewById(R.id.etProdutoNome);
-        //->> tem que aruumar no layout Switchativo = findViewById(R.id.tvProdutoAtivo);
+        Switchativo = findViewById(R.id.swProdutoAtivo);
         Textovalor = findViewById(R.id.etProdutoValor);
         Textoqtd_estoque = findViewById(R.id.etProdutoQuantidade);
     }
@@ -29,9 +29,9 @@ public class produto extends AppCompatActivity {
     public void salvarProduto(){
         Produto p = new Produto(); // cria uma nova classe
         p.setNome(TextoNome.getText().toString()); // preenche a classe com o que ta escrito
-        p.setAtivo(Switchativo.getShowText());//setCelular(TextoCelular.getText().toString());
-        //p.setValor(Textovalor.getText());//Temos que resolver isso aki
-        //p.setQtd_estoque(TextoObservacao.getText());//mesma coisa que o de cima
+        p.setAtivo(Switchativo.getShowText());
+        p.setValor(Float.parseFloat(Textovalor.getText().toString()));//Temos que resolver isso aki
+        p.setQtd_estoque(Float.parseFloat(Textoqtd_estoque.getText().toString()));//mesma coisa que o de cima
         BDDados.Salvar(p,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
     }
 }

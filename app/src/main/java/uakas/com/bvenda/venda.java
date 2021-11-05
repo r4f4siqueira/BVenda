@@ -42,12 +42,16 @@ public class venda extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void salvarvenda(){
-        Venda p = new Venda(); // cria uma nova classe
-        //p.setId(Textoid.getText());//arrumar isso aki tbm
-        p.setDescricao(Textodescricao.getText().toString());
-        //p.setValor(Textovalor.getText().toString());arrumar
-        //p.setId_cliente(Textoid_cliente.getText());Arrumar
-        BDDados.Salvar(p,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
+    public void salvarVenda(){
+        Venda v = new Venda(); // cria uma nova classe
+        v.setId(Integer.parseInt(Textoid.getText().toString()));
+        v.setDescricao(Textodescricao.getText().toString());
+        v.setValor(Float.parseFloat(Textovalor.getText().toString()));
+        v.setId_cliente(Integer.parseInt(Textoid_cliente.getText().toString()));
+        BDDados.Salvar(v,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
+    }
+
+    public void salvarItemVenda(){
+        //salva um itemvenda pra dentro do banco e adiciona ele na listview
     }
 }

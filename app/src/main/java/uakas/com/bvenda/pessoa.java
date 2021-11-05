@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import uakas.com.bvenda.Banco.BDDados;
 import uakas.com.bvenda.Entidades.Pessoa;
@@ -14,6 +15,7 @@ public class pessoa extends AppCompatActivity {
     EditText TextoCelular;
     EditText TextoEmail;
     EditText TextoObservacao;
+    Switch SwitchFornecedor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class pessoa extends AppCompatActivity {
         TextoCelular = findViewById(R.id.etPessoaCelular);
         TextoEmail = findViewById(R.id.etPessoaEmail);
         TextoObservacao = findViewById(R.id.etPessoaObservacao);
+        SwitchFornecedor = findViewById(R.id.swPessoaFornecedor);
     }
 
     public void salvarpessoa(View view){
@@ -31,6 +34,7 @@ public class pessoa extends AppCompatActivity {
         p.setCelular(TextoCelular.getText().toString());
         p.setEmail(TextoEmail.getText().toString());
         p.setObservacao(TextoObservacao.getText().toString());
+        p.setFornecedor(SwitchFornecedor.getShowText()); // 0 -> cliente / 1 -> fornecedor
         BDDados.Salvar(p,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
     }
 }

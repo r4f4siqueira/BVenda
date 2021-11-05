@@ -29,7 +29,7 @@
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/etContaDevedorCredor"
-        app:layout_constraintTop_toBottomOf="@+id/tvContaVendaCompraCod" />
+        app:layout_constraintTop_toBottomOf="@+id/swCompraVenda" />
 
     <TextView
         android:id="@+id/textView8"
@@ -88,8 +88,8 @@
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/brContasMenu" />
 
-    <TextView
-        android:id="@+id/tvContaVendaCompraCod"
+    <Switch
+        android:id="@+id/swCompraVenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
