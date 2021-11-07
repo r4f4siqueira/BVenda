@@ -3,6 +3,7 @@ package uakas.com.bvenda;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 
@@ -25,7 +26,7 @@ public class contas extends AppCompatActivity {
         SwitchCompraVenda = findViewById(R.id.swCompraVenda);
     }
 
-    public void salvarConta(){
+    public void salvarConta(View view){
         Conta c = new Conta(); // cria uma nova classe
         c.setValor(Float.parseFloat(TextoValor.getText().toString()));
         if(SwitchCompraVenda.getShowText()){ // coloca o id em compra ou em venda, switch = 1 -> compra / switch = 0 -> venda, nao sei se esse metodo retorna o estado do switch
@@ -33,6 +34,6 @@ public class contas extends AppCompatActivity {
         } else {
             c.setId_venda(Integer.parseInt(TextoCredorDevedor.getText().toString()));
         }
-        BDDados.Salvar(c,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
+        //BDDados.Salvar(c,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
     }
 }

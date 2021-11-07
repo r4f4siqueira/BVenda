@@ -3,6 +3,7 @@ package uakas.com.bvenda;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -29,16 +30,16 @@ public class compra extends AppCompatActivity {
 
     }
 
-    public void salvarCompra(){
+    public void salvarCompra(View view){
         Compra c = new Compra(); // cria uma nova classe
         c.setId(Integer.parseInt(Textoid.getText().toString()));
         c.setDescricao(Textodescricao.getText().toString());
         c.setValor(Float.parseFloat(Textovalor.getText().toString()));
         c.setId_fornecedor(Integer.parseInt(Textoid_fornecedor.getText().toString()));
-        BDDados.Salvar(c,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
+        //BDDados.Salvar(c,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
     }
 
-    public void salvarItemCompra(){
+    public void salvarItemCompra(View view){
         //salva um itemCompra pra dentro do banco e adiciona ele na listview
     }
 }

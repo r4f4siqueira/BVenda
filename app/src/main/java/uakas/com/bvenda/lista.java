@@ -43,22 +43,22 @@ public class lista extends AppCompatActivity {
             switch (it.getStringExtra("entidade").toLowerCase(Locale.ROOT)) { // diferenciador pros botoes apertados, tem que ter coisa no "labelfor" do botao
                 //nao sei se null funciona com campos
                 case "cliente":
-                    //dados = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 0});
-                    dados = new LinkedList<>();
+                    dados = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 0});
+                    //dados = new LinkedList<>();
                     classe = new pessoa();
-                    dados.add("pessoa");
+                    //dados.add("pessoa");
                     break;
                 case "produto":
-                    //dados = BDDados.Listar(new Produto(), getApplicationContext(), new String[]{"nome","valor","qtd_estoque"}, null, null);
-                    dados = new LinkedList<>();
+                    dados = BDDados.Listar(new Produto(), getApplicationContext(), null, null, null);
+                    //dados = new LinkedList<>();
                     classe = new produto();
-                    dados.add("produto");
+                    //dados.add("produto");
                     break;
                 case "fornecedor":
-                    //dados = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 1});
-                    dados = new LinkedList<>();
+                    dados = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "fornecedor = ?", new String[]{"" + 1});
+                    //dados = new LinkedList<>();
                     classe = new pessoa();
-                    dados.add("fornecedor");
+                    //dados.add("fornecedor");
                     break;
                 case "venda":
                     //dados = BDDados.Listar(new venda(), getApplicationContext(), null, null, null);
@@ -87,6 +87,7 @@ public class lista extends AppCompatActivity {
     public void adicionar(View view){
         Intent it = new Intent(this,classe.getClass()); //cria a intent da tela da entidade que foi criada, pode dar merda pq tem classe com o msm nome
         startActivity(it);
+        Atualizar();
     }
 
 

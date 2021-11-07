@@ -1,8 +1,10 @@
 package uakas.com.bvenda.Entidades;
 
+import android.content.ContentValues;
+
 import java.io.Serializable;
 
-public class Pessoa implements Serializable {
+public class Pessoa implements Serializable, EntidadeBanco {
     private Integer id;
     private String nome;
     private String celular;
@@ -10,8 +12,34 @@ public class Pessoa implements Serializable {
     private String observacao;
     private Boolean fornecedor;
 
+    @Override
     public Integer getId() {
         return id;
+    }
+
+    @Override
+    public ContentValues getDadosSalvar() {// isso DEVE seguir a ordem dos atributos das tabelas do banco no BDSetup
+
+        ContentValues dados = new ContentValues();
+        dados.put("id",id);
+        dados.put("nome",nome);
+        dados.put("celular",celular);
+        dados.put("email",email);
+        dados.put("observacao",observacao);
+        dados.put("fornecedor",fornecedor);
+
+        return dados;
+    }
+
+    @Override
+    public EntidadeBanco setDados(String[] dados) {
+        id = Integer.parseInt(dados[0]);
+        nome = dados[1];
+        celular = dados[2];
+        email = dados[3];
+        observacao = dados[4];
+        fornecedor = Boolean.parseBoolean(dados[5]);
+        return this;
     }
 
     public void setId(Integer id) {
