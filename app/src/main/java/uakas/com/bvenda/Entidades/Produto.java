@@ -34,10 +34,10 @@ public class Produto implements Serializable,EntidadeBanco {
     @Override
     public EntidadeBanco setDados(String[] dados) { //  isso DEVE seguir a ordem dos atributos das tabelas do banco no BDSetup
         id = Integer.parseInt(dados[0]);
-        nome = dados[0];
-        ativo = Boolean.parseBoolean(dados[1]);
-        valor = Float.parseFloat(dados[2]);
-        qtd_estoque = Float.parseFloat(dados[3]);
+        nome = dados[1];
+        ativo = Boolean.parseBoolean(dados[2]);
+        valor = Float.parseFloat(dados[3]);
+        qtd_estoque = Float.parseFloat(dados[4]);
         return this;
     }
 

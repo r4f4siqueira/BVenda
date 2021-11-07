@@ -1,15 +1,39 @@
 package uakas.com.bvenda.Entidades;
 
+import android.content.ContentValues;
+
 import java.io.Serializable;
 
-public class Venda implements Serializable {
+public class Venda implements Serializable,EntidadeBanco {
     private Integer id;
     private Integer id_cliente;
     private String descricao;
     private Float valor;
 
+    @Override
     public Integer getId() {
         return id;
+    }
+
+    @Override
+    public ContentValues getDadosSalvar() {
+        ContentValues dados = new ContentValues();
+        dados.put("id",id);
+        dados.put("id_cliente",id_cliente);
+        dados.put("descricao",descricao);
+        dados.put("valor",valor);
+
+        return dados;
+    }
+
+    @Override
+    public EntidadeBanco setDados(String[] dados) {
+        id = Integer.parseInt(dados[0]);
+        id_cliente =Integer.parseInt(dados[1]);
+        descricao = dados[2];
+        valor = Float.parseFloat(dados[3]);
+
+        return this;
     }
 
     public void setId(Integer id) {
