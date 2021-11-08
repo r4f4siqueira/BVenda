@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import uakas.com.bvenda.Banco.BDDados;
+import uakas.com.bvenda.Entidades.Compra;
 import uakas.com.bvenda.Entidades.Pessoa;
 
 public class pessoa extends AppCompatActivity {
@@ -15,6 +17,7 @@ public class pessoa extends AppCompatActivity {
     EditText TextoCelular;
     EditText TextoEmail;
     EditText TextoObservacao;
+    TextView Textoid;
     Switch SwitchFornecedor;
 
     @Override
@@ -26,6 +29,7 @@ public class pessoa extends AppCompatActivity {
         TextoEmail = findViewById(R.id.etPessoaEmail);
         TextoObservacao = findViewById(R.id.etPessoaObservacao);
         SwitchFornecedor = findViewById(R.id.swPessoaFornecedor);
+        Textoid = findViewById(R.id.tvPessoaCod);
     }
 
     public void salvarpessoa(View view){
@@ -36,5 +40,20 @@ public class pessoa extends AppCompatActivity {
         p.setObservacao(TextoObservacao.getText().toString());
         p.setFornecedor(SwitchFornecedor.getShowText()); // 0 -> cliente / 1 -> fornecedor
         BDDados.Salvar(p,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
+    }
+
+    public void removerPessoa (View view){
+        Pessoa p = new Pessoa();
+        p.setId(Integer.parseInt(Textoid.getText().toString()));
+        try {
+            BDDados.Remover(p,getApplicationContext());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        onBackPressed();
+    }
+
+    public void cancelar(View view){
+        onBackPressed();
     }
 }

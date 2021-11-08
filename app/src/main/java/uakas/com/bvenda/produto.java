@@ -2,6 +2,7 @@ package uakas.com.bvenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,6 +30,11 @@ public class produto extends AppCompatActivity {
         Textoqtd_estoque = findViewById(R.id.etProdutoQuantidade);
         CodigoProduto = findViewById(R.id.tvProdutoCodigo);
 
+    }
+
+    public void menul (View view){
+        Intent it = new Intent(this, menuLateral.class);
+        startActivityForResult(it,100);
     }
 
     public void salvarProduto(View view){

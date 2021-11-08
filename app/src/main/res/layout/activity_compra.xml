@@ -61,6 +61,7 @@
         android:backgroundTint="#00FFFFFF"
         android:hint="produto"
         android:isScrollContainer="false"
+        android:onClick="listar"
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/etCompraProduto"
@@ -86,6 +87,7 @@
         android:backgroundTint="#00FFFFFF"
         android:hint="pessoa"
         android:isScrollContainer="false"
+        android:onClick="listar"
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/etCompraFornecedor"
@@ -99,6 +101,7 @@
         android:backgroundTint="#00FFFFFF"
         android:hint="compra"
         android:isScrollContainer="false"
+        android:onClick="listar"
         android:textAlignment="center"
         app:icon="@drawable/ic_baseline_search_24"
         app:layout_constraintStart_toEndOf="@+id/tvCompraCod"
@@ -116,23 +119,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCompraFornecedor" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvCompraValorFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="valorFinal"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="0.00"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/btCompraGerar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btCompraGerar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="#4CAF50"
         android:text="Gerar Compra"
         app:icon="@drawable/ic_baseline_check_24"
@@ -167,7 +170,7 @@
     <ListView
         android:id="@+id/lvItensCompra"
         android:layout_width="396dp"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -182,8 +185,34 @@
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="menul"
         app:icon="@drawable/ic_baseline_menu_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btCompraCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#F44336"
+        android:onClick="cancelar"
+        android:text="Cancelar"
+        app:icon="@drawable/ic_baseline_close_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btCompraExcluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:backgroundTint="#D60101"
+        android:onClick="removerCompra"
+        android:text="Excluir"
+        app:icon="@drawable/ic_baseline_delete_forever_24"
+        app:layout_constraintBottom_toTopOf="@+id/btCompraCancelar"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

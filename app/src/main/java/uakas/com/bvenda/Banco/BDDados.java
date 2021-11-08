@@ -56,7 +56,7 @@ public class BDDados {
                     }
                 };
                 eb = o.setDados(dados);
-                lista.add(eb);
+                lista.add(eb); // nao sei pq mas no final todos os itens da lista viram o ultimo, e o ultimo ta embaralhado
             } while (cursor.moveToNext());
         }
         return lista;

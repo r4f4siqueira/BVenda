@@ -1,5 +1,6 @@
 package uakas.com.bvenda;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,7 @@ import java.util.Locale;
 import uakas.com.bvenda.Banco.BDDados;
 import uakas.com.bvenda.Banco.BDSetup;
 import uakas.com.bvenda.Entidades.Compra;
+import uakas.com.bvenda.Entidades.Conta;
 import uakas.com.bvenda.Entidades.Pessoa;
 import uakas.com.bvenda.Entidades.Produto;
 import uakas.com.bvenda.Entidades.Venda;
@@ -61,16 +63,22 @@ public class lista extends AppCompatActivity {
                     //dados.add("fornecedor");
                     break;
                 case "venda":
-                    //dados = BDDados.Listar(new venda(), getApplicationContext(), null, null, null);
-                    dados = new LinkedList<>();
+                    dados = BDDados.Listar(new Venda(), getApplicationContext(), null, null, null);
+                    //dados = new LinkedList<>();
                     classe = new venda();
-                    dados.add("venda");
+                    //dados.add("venda");
                     break;
                 case "compra":
-                    //dados = BDDados.Listar(new compra(), getApplicationContext(), null, null, null);
-                    dados = new LinkedList<>();
+                    dados = BDDados.Listar(new Compra(), getApplicationContext(), null, null, null);
+                    //dados = new LinkedList<>();
                     classe = new compra();
-                    dados.add("compra");
+                    //dados.add("compra");
+                    break;
+                case "conta":
+                    dados = BDDados.Listar(new Conta(), getApplicationContext(), null, null, null);
+                    //dados = new LinkedList<>();
+                    classe = new contas();
+                    //dados.add("compra");
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + getIntent().getStringExtra("entidade"));
@@ -84,11 +92,21 @@ public class lista extends AppCompatActivity {
             lista.setAdapter(adapter);
         }
     }
+
+
+
     public void adicionar(View view){
-        Intent it = new Intent(this,classe.getClass()); //cria a intent da tela da entidade que foi criada, pode dar merda pq tem classe com o msm nome
-        startActivity(it);
         Atualizar();
+        Intent it = new Intent(this,classe.getClass()); //cria a intent da tela da entidade que foi criada, pode dar merda pq tem classe com o msm nome
+        startActivityForResult(it,347);
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 347) {
+            Atualizar();
+        }
+    }
 }
