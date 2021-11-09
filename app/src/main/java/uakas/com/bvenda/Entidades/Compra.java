@@ -68,8 +68,9 @@ public class Compra implements Serializable,EntidadeBanco {
 
     @Override
     public String toString() {
-        return "fornecedor = " + id_fornecedor +
-                "\n descricao = " + descricao  +
-                "\n valor = " + valor;
+        return "id compra = " + id +
+                " fornecedor = " + id_fornecedor +
+                " descricao = " + descricao  +
+                " valor = " + valor;
     }
 }

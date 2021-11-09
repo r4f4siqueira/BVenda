@@ -22,7 +22,7 @@ public class BDDados {
         List lista = new LinkedList();
         SQLiteDatabase BDcontrole = BD.getReadableDatabase();
         //metodo generico q vc escreve a query que quiser
-        Cursor cursor = BDcontrole.query(o.getClass().getSimpleName().toLowerCase(Locale.ROOT), campos,selecao,argumentos,null,null,null );
+        Cursor cursor = BDcontrole.query(o.getClass().getSimpleName().toLowerCase(Locale.ROOT), campos,selecao,argumentos,null,null,null);
         if(cursor.moveToFirst()){
             do {
                 String[] dados = new String[cursor.getColumnCount()];
@@ -41,20 +41,14 @@ public class BDDados {
                             break;
                     }
                 }
-                EntidadeBanco eb = new EntidadeBanco() {
-                    @Override
-                    public Integer getId() {
-                        return null;
-                    }
-                    @Override
-                    public ContentValues getDadosSalvar() {
-                        return null;
-                    }
-                    @Override
-                    public EntidadeBanco setDados(String[] dados) {
-                        return null;
-                    }
-                };
+                EntidadeBanco eb = null;
+                try {
+                    eb = EntidadeBanco.class.newInstance();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                }
                 eb = o.setDados(dados);
                 lista.add(eb); // nao sei pq mas no final todos os itens da lista viram o ultimo, e o ultimo ta embaralhado
             } while (cursor.moveToNext());
@@ -80,6 +74,25 @@ public class BDDados {
         } else {
             //nao deveria cair aqui
             throw new Exception("deletando objeto sem id");
+        }
+
+    }
+
+    public static Integer getlastid(String tabela,String[] campos, Context c){
+        BDSetup BD = new BDSetup(c);
+        Integer id = null;
+        SQLiteDatabase BDcontrole = BD.getReadableDatabase();
+        //metodo generico q vc escreve a query que quiser
+        Cursor cursor = BDcontrole.query(tabela,campos,null,null,null,null,"id DESC","1");
+        if(cursor.moveToFirst()){
+            do {
+                id = cursor.getInt(0);
+            } while (cursor.moveToNext());
+        }
+        if (id == null){
+            return 0;
+        } else {
+            return id;
         }
 
     }

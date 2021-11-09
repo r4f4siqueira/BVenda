@@ -33,12 +33,18 @@ public class Produto implements Serializable,EntidadeBanco {
 
     @Override
     public EntidadeBanco setDados(String[] dados) { //  isso DEVE seguir a ordem dos atributos das tabelas do banco no BDSetup
-        id = Integer.parseInt(dados[0]);
-        nome = dados[1];
-        ativo = Boolean.parseBoolean(dados[2]);
-        valor = Float.parseFloat(dados[3]);
-        qtd_estoque = Float.parseFloat(dados[4]);
-        return this;
+        Produto p = new Produto();
+        //id = Integer.parseInt(dados[0]); //era assim
+        p.setId(Integer.parseInt(dados[0])); // ficou assim
+        p.setNome(dados[1]);
+        p.setAtivo(Boolean.parseBoolean(dados[2]));
+        if (dados[3] != null){
+            p.setValor(Float.parseFloat(dados[3]));
+        } else {
+            p.setValor(null);
+        }
+        p.setQtd_estoque(Float.parseFloat(dados[4]));
+        return p;
     }
 
     public void setId(Integer id) {
