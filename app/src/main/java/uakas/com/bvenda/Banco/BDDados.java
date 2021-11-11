@@ -39,6 +39,9 @@ public class BDDados {
                         case 3:
                             dados[i] = cursor.getString(i)+"";
                             break;
+                        case 4:
+                            dados[i] = cursor.getDouble(i)+"";
+                            break;
                     }
                 }
                 EntidadeBanco eb = null;
@@ -63,7 +66,12 @@ public class BDDados {
         ContentValues cv = o.getDadosSalvar();
 //        Produto p = new Produto(); exemplo de como faria sem ser generico
 //        cv.put("nomeproduto",p.getNome());
-        BDcontrole.insert(o.getClass().getSimpleName(),null,cv);
+
+        if (o.getId() != null && o.getId()>0){ // primeira iteracao de editar um objeto ja salvo, n sei se funciona :)
+            BDcontrole.update(o.getClass().getSimpleName(),cv,"id = ?",new String[]{o.getId().toString()});
+        } else {
+            BDcontrole.insert(o.getClass().getSimpleName(),null,cv);
+        }
     }
 
     public static void Remover (EntidadeBanco o, Context c) throws Exception {
@@ -75,10 +83,16 @@ public class BDDados {
             //nao deveria cair aqui
             throw new Exception("deletando objeto sem id");
         }
-
     }
 
-    public static Integer getlastid(String tabela,String[] campos, Context c){
+    public static void bombaNuclear(EntidadeBanco o,Context c){ // nuka uma tabela inteira, destruindo tudo dela
+        BDSetup BD = new BDSetup(c);
+        SQLiteDatabase BDControle = BD.getWritableDatabase();
+
+        BDControle.delete(o.getClass().getSimpleName(),null,null);
+    }
+
+    public static Integer getlastid(String tabela,String[] campos, Context c){ // retorna o ultimo id da tabela que voce escolheu, por enquanto colcar algo mais em campos nao faz nada
         BDSetup BD = new BDSetup(c);
         Integer id = null;
         SQLiteDatabase BDcontrole = BD.getReadableDatabase();

@@ -23,20 +23,20 @@ public class ItemCompra implements Serializable,EntidadeBanco {
         dados.put("id_compra",id_compra);
         dados.put("id_produto",id_produto);
         dados.put("quantidade",quantidade);
-        dados.put("valor_un",valor);//lembrando que isso eh valor un
+        dados.put("valor_un",valor);//lembrando que isso eh valor unitario
 
         return dados;
     }
 
     @Override
-    public EntidadeBanco setDados(String[] dados) {
-        id = Integer.parseInt(dados[0]);
-        id_compra =Integer.parseInt(dados[1]);
-        id_produto =Integer.parseInt(dados[2]);
-        quantidade =Float.parseFloat(dados[3]);
-        valor = Float.parseFloat(dados[4]);//lembrando que isso eh valor un
-
-        return this;
+    public EntidadeBanco setDados(String[] dados) { // nao tem um jeito mais facil de fazer isso aqui nao quebrar quando um desses valores for nulo???
+        ItemCompra ic = new ItemCompra();
+        ic.setId(Integer.parseInt(dados[0]));
+        ic.setId_compra(Integer.parseInt(dados[1]));
+        ic.setId_produto(Integer.parseInt(dados[2]));
+        ic.setQuantidade(Float.parseFloat(dados[3]));
+        ic.setValor(Float.parseFloat(dados[4]));
+        return ic;
     }
 
     public void setId(Integer id) {

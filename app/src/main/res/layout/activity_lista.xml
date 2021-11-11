@@ -9,12 +9,13 @@
 
     <ListView
         android:id="@+id/lvObjeto"
-        android:layout_width="393dp"
-        android:layout_height="596dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="100dp"
         android:background="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,14 +23,44 @@
 
     <Button
         android:id="@+id/btAddPessoa"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
         android:onClick="adicionar"
         android:text="+"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvObjeto" />
+
+    <Button
+        android:id="@+id/btListaDestruir"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#AC0B0B"
+        android:ellipsize="middle"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:isScrollContainer="false"
+        android:onClick="destruicao"
+        android:scrollbarSize="0dp"
+        android:text="Destruir"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textSize="13sp"
+        app:flow_horizontalAlign="start"
+        app:flow_verticalAlign="baseline"
+        app:icon="@mipmap/ic_bombanuclear_foreground"
+        app:iconPadding="0dp"
+        app:iconSize="50dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvObjeto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
