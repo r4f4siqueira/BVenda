@@ -28,12 +28,14 @@ public class Venda implements Serializable,EntidadeBanco {
 
     @Override
     public EntidadeBanco setDados(String[] dados) {
-        id = Integer.parseInt(dados[0]);
-        id_cliente =Integer.parseInt(dados[1]);
-        descricao = dados[2];
-        valor = Float.parseFloat(dados[3]);
+        Venda v = new Venda();
 
-        return this;
+        v.setId(Integer.parseInt(dados[0]));
+        v.setId_cliente(Integer.parseInt(dados[1]));
+        v.setDescricao(dados[2]);
+        v.setValor(Float.parseFloat(dados[3]));
+
+        return v;
     }
 
     public void setId(Integer id) {

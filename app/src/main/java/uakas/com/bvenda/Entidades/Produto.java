@@ -40,8 +40,6 @@ public class Produto implements Serializable,EntidadeBanco {
         p.setAtivo(Boolean.parseBoolean(dados[2]));
         if (dados[3] != null){
             p.setValor(Float.parseFloat(dados[3]));
-        } else {
-            p.setValor(null);
         }
         p.setQtd_estoque(Float.parseFloat(dados[4]));
         return p;

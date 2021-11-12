@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -53,7 +54,11 @@ public class lista extends AppCompatActivity {
                 //aqui que vai pegar o objeto e mandar ele para a tela que chamou essa, colocando dentro do campo de texto la bonitinho
                 // nao sei como fazer ainda, mas de ideia eu tive : super.getintent(), ou getparent().getintent() pra pegar a intent da tela que chamou essa
                 // sem ideias de como mandar para lá o objeto
-
+                EntidadeBanco eb = (EntidadeBanco) dados.get(i);
+                Intent it = new Intent();
+                it.putExtra("EB", (Serializable) eb);
+                setResult(RESULT_OK,it);
+                onBackPressed();
             }
         });
 
@@ -63,8 +68,7 @@ public class lista extends AppCompatActivity {
                 //aqui dentro chama a tela de cadastro do objeto quando clica em cima dele
                 Intent it = new Intent(getApplicationContext(),classe.getClass());
                 it.putExtra("objeto", (Serializable) dados.get(i));
-
-                startActivityForResult(it,357);
+                startActivityForResult(it,357); // n sei pq quando atualiza uma entidade existente ela pula essa tela e volta pra anterior
                 return false;
             }
         });
@@ -172,11 +176,11 @@ public class lista extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 347) { // salvou um objeto novo
+        if (requestCode == 347 && resultCode == RESULT_OK) { // salvou um objeto novo
             Atualizar();
             Toast.makeText(this, "Item salvo com sucesso", Toast.LENGTH_SHORT).show();
         }
-        if (requestCode == 357) { // clicou no objeto para editar
+        if (requestCode == 357 && resultCode == RESULT_OK) { // clicou no objeto para editar
             Atualizar();
             Toast.makeText(this, "Item Editado com sucesso", Toast.LENGTH_SHORT).show();
         }

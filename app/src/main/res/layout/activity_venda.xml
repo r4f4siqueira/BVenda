@@ -7,236 +7,254 @@
     android:background="#FFCA28"
     tools:context=".venda">
 
-    <Button
-        android:id="@+id/btVendaAddItenVenda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#8BC34A"
-        android:onClick="salvarItemVenda"
-        android:text="@string/add"
-        app:icon="@drawable/ic_baseline_add_24"
-        app:layout_constraintStart_toEndOf="@+id/etVendaQuantidade"
-        app:layout_constraintTop_toBottomOf="@+id/btVendaPesquisaProduto" />
-
-    <Button
-        android:id="@+id/btVendaPesquisaProduto"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00FFFFFF"
-        android:hint="@string/produto"
-        android:isScrollContainer="false"
-        android:onClick="listar"
-        android:textAlignment="center"
-        app:icon="@drawable/ic_baseline_search_24"
-        app:layout_constraintStart_toEndOf="@+id/etVendaProduto"
-        app:layout_constraintTop_toBottomOf="@+id/etVendaDescricao" />
-
-    <Button
-        android:id="@+id/btVendaPesquisaCliente"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:hint="@string/cliente"
-        android:isScrollContainer="false"
-        android:onClick="listar"
-        android:textAlignment="center"
-        app:icon="@drawable/ic_baseline_search_24"
-        app:layout_constraintStart_toEndOf="@+id/etVendaCliente"
-        app:layout_constraintTop_toBottomOf="@+id/btVendaPesquisaVenda" />
-
-    <Button
-        android:id="@+id/btVendaPesquisaVenda"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:hint="@string/venda"
-        android:isScrollContainer="false"
-        android:onClick="listar"
-        android:textAlignment="center"
-        app:icon="@drawable/ic_baseline_search_24"
-        app:layout_constraintStart_toEndOf="@+id/tvVendaCod"
-        app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
-
-    <Button
-        android:id="@+id/btVenda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="#4CAF50"
-        android:hint="venda"
-        android:onClick="salvarVenda"
-        android:text="@string/gerar_venda"
-        app:icon="@drawable/ic_baseline_check_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/etVendaCliente"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/cliente"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/etVendaProduto"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="@string/produto"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etVendaDescricao" />
-
-    <EditText
-        android:id="@+id/etVendaQuantidade"
-        android:layout_width="86dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/qtd"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etVendaProduto" />
-
-    <EditText
-        android:id="@+id/etVendaDescricao"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/descri_o"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etVendaCliente" />
-
-    <EditText
-        android:id="@+id/tvVendaValorFinal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="5dp"
-        android:text="0.00"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/btVenda"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="115dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/venda_n"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
-
-    <TextView
-        android:id="@+id/tvVendaCod"
-        android:layout_width="102dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/codvenda"
-        android:textAlignment="textEnd"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="5dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etVendaDescricao" />
-
-    <Button
-        android:id="@+id/btVendaMenu"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="menul"
-        app:icon="@drawable/ic_baseline_menu_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btVendaCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="#F44336"
-        android:onClick="cancelar"
-        android:text="Cancelar"
-        app:icon="@drawable/ic_baseline_close_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btVendaExcluir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:backgroundTint="#D60101"
-        android:onClick="removerVenda"
-        android:text="Excluir"
-        app:icon="@drawable/ic_baseline_delete_forever_24"
-        app:layout_constraintBottom_toTopOf="@+id/btVendaCancelar"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btVendaExcluir"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btVendaAddItenVenda">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" >
 
-            <ListView
-                android:id="@+id/lvItensVenda"
-                android:layout_width="0dp"
-                android:layout_height="150dp"
+            <Button
+                android:id="@+id/btVendaAddItenVenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#8BC34A"
+                android:onClick="salvarItemVenda"
+                android:text="@string/add"
+                app:icon="@drawable/ic_baseline_add_24"
+                app:layout_constraintStart_toEndOf="@+id/etVendaQuantidade"
+                app:layout_constraintTop_toBottomOf="@+id/btVendaPesquisaProduto" />
+
+            <Button
+                android:id="@+id/btVendaPesquisaProduto"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/produto"
+                android:isScrollContainer="false"
+                android:onClick="listar"
+                android:textAlignment="center"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:layout_constraintStart_toEndOf="@+id/etVendaProduto"
+                app:layout_constraintTop_toBottomOf="@+id/etVendaDescricao" />
+
+            <Button
+                android:id="@+id/btVendaPesquisaCliente"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/cliente"
+                android:isScrollContainer="false"
+                android:onClick="listar"
+                android:textAlignment="center"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:layout_constraintStart_toEndOf="@+id/etVendaCliente"
+                app:layout_constraintTop_toBottomOf="@+id/btVendaPesquisaVenda" />
+
+            <Button
+                android:id="@+id/btVendaPesquisaVenda"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#00FFFFFF"
+                android:hint="@string/venda"
+                android:isScrollContainer="false"
+                android:onClick="listar"
+                android:textAlignment="center"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:layout_constraintStart_toEndOf="@+id/tvVendaCod"
+                app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
+
+            <Button
+                android:id="@+id/btVenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:background="#FFEB3B"
+                android:backgroundTint="#4CAF50"
+                android:hint="venda"
+                android:onClick="salvarVenda"
+                android:text="@string/gerar_venda"
+                app:icon="@drawable/ic_baseline_check_24"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/etVendaCliente"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/cliente"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <EditText
+                android:id="@+id/etVendaProduto"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/produto"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etVendaDescricao" />
+
+            <EditText
+                android:id="@+id/etVendaQuantidade"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/qtd"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etVendaProduto" />
+
+            <EditText
+                android:id="@+id/etVendaDescricao"
+                android:layout_width="320dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/descri_o"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etVendaCliente" />
+
+            <EditText
+                android:id="@+id/tvVendaValorFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="0.00"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toTopOf="@+id/btVenda"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/venda_n"
+                android:textAlignment="textStart"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
+
+            <TextView
+                android:id="@+id/tvVendaCod"
+                android:layout_width="102dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/codvenda"
+                android:textAlignment="textEnd"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/btVendaMenu" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="409dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etVendaDescricao" />
+
+            <Button
+                android:id="@+id/btVendaMenu"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick="menul"
+                app:icon="@drawable/ic_baseline_menu_24"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btVendaCancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#F44336"
+                android:onClick="cancelar"
+                android:text="Cancelar"
+                app:icon="@drawable/ic_baseline_close_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btVendaExcluir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="#D60101"
+                android:onClick="removerVenda"
+                android:text="Excluir"
+                app:icon="@drawable/ic_baseline_delete_forever_24"
+                app:layout_constraintBottom_toTopOf="@+id/btVendaCancelar"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/btVendaExcluir"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btVendaAddItenVenda">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ListView
+                        android:id="@+id/lvItensVenda"
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:background="#FFEB3B"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

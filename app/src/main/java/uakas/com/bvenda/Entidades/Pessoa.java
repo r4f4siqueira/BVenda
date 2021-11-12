@@ -33,13 +33,16 @@ public class Pessoa implements Serializable, EntidadeBanco {
 
     @Override
     public EntidadeBanco setDados(String[] dados) {
-        id = Integer.parseInt(dados[0]);
-        nome = dados[1];
-        celular = dados[2];
-        email = dados[3];
-        observacao = dados[4];
-        fornecedor = Boolean.parseBoolean(dados[5]);
-        return this;
+        Pessoa p = new Pessoa();
+
+        p.setId(Integer.parseInt(dados[0]));
+        p.setNome(dados[1]);
+        p.setCelular(dados[2]);
+        p.setEmail(dados[3]);
+        p.setObservacao(dados[4]);
+        p.setFornecedor(Boolean.parseBoolean(dados[5]));
+
+        return p;
     }
 
     public void setId(Integer id) {

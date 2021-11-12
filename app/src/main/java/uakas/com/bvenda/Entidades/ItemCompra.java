@@ -29,13 +29,15 @@ public class ItemCompra implements Serializable,EntidadeBanco {
     }
 
     @Override
-    public EntidadeBanco setDados(String[] dados) { // nao tem um jeito mais facil de fazer isso aqui nao quebrar quando um desses valores for nulo???
+    public EntidadeBanco setDados(String[] dados) { // nao tem um jeito facil de fazer isso aqui nao quebrar quando um desses valores for nulo???
         ItemCompra ic = new ItemCompra();
+
         ic.setId(Integer.parseInt(dados[0]));
         ic.setId_compra(Integer.parseInt(dados[1]));
         ic.setId_produto(Integer.parseInt(dados[2]));
         ic.setQuantidade(Float.parseFloat(dados[3]));
         ic.setValor(Float.parseFloat(dados[4]));
+
         return ic;
     }
 
@@ -77,12 +79,10 @@ public class ItemCompra implements Serializable,EntidadeBanco {
 
     @Override
     public String toString() {
-        return "ItemCompra{" +
-                "id=" + id +
-                ", id_compra=" + id_compra +
-                ", id_produto=" + id_produto +
-                ", quantidade=" + quantidade +
-                ", valor=" + valor +
+        return "Item "+id+": " +
+                "\n cod produto:" + id_produto+
+                "\n quantidade:" + quantidade +
+                "\n valor:" + valor +
                 '}';
     }
 }

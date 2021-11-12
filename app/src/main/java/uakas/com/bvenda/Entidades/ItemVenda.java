@@ -30,13 +30,15 @@ public class ItemVenda implements Serializable,EntidadeBanco {
 
     @Override
     public EntidadeBanco setDados(String[] dados) {
-        id = Integer.parseInt(dados[0]);
-        id_venda =Integer.parseInt(dados[1]);
-        id_produto =Integer.parseInt(dados[2]);
-        quantidade =Float.parseFloat(dados[3]);
-        valor_un = Float.parseFloat(dados[4]);
+        ItemVenda iv = new ItemVenda();
 
-        return this;
+        iv.setId(Integer.parseInt(dados[0]));
+        iv.setId_venda(Integer.parseInt(dados[1]));
+        iv.setId_produto(Integer.parseInt(dados[2]));
+        iv.setQuantidade(Float.parseFloat(dados[3]));
+        iv.setValor_un(Float.parseFloat(dados[4]));
+
+        return iv;
     }
 
     public void setId(Integer id) {

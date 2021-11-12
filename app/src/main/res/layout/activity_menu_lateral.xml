@@ -59,4 +59,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btMenuConta" />
+
+    <Button
+        android:id="@+id/btMenuCliente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#DAC50D"
+        android:hint="cliente"
+        android:onClick="listar"
+        android:text="Clientes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btMenuProduto" />
+
+    <Button
+        android:id="@+id/btMenuFornecedor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#DAC50D"
+        android:hint="fornecedor"
+        android:onClick="listar"
+        android:text="Fornecedores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btMenuCliente" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,10 +29,12 @@ public class Compra implements Serializable,EntidadeBanco {
     @Override
     public EntidadeBanco setDados(String[] dados) {
         Compra c = new Compra();
+
         c.setId(Integer.parseInt(dados[0]));
         c.setId_fornecedor(Integer.parseInt(dados[1]));
         c.setDescricao(dados[2]);
         c.setValor(Float.parseFloat(dados[3]));
+
         return c;
     }
 
@@ -70,7 +72,7 @@ public class Compra implements Serializable,EntidadeBanco {
     public String toString() {
         return "id compra = " + id +
                 " fornecedor = " + id_fornecedor +
-                " descricao = " + descricao  +
-                " valor = " + valor;
+                "\n descricao = " + descricao  +
+                "\n valor = " + valor;
     }
 }
