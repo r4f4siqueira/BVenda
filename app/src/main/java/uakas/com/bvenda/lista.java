@@ -154,8 +154,10 @@ public class lista extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         BDDados.bombaNuclear(entidade,getApplicationContext());
+                        //BDDados.bombaNuclear(new Venda(),getApplicationContext());
                         if (entidade.getClass().getSimpleName().equals("Venda") || entidade.getClass().getSimpleName().equals("Compra")){
                             BDDados.bombaNuclear(Item,getApplicationContext());
+                           // BDDados.bombaNuclear(new ItemVenda(),getApplicationContext());
                             Toast.makeText(lista.this, "Itens removidos", Toast.LENGTH_SHORT).show();
                         }
                         Atualizar();

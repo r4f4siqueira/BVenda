@@ -141,7 +141,7 @@ public class compra extends AppCompatActivity {
                     if (!produto.getNome().equals("") && produto.getId() != null){
                         Textoid_produto.setText(produto.getId() + " - " + produto.getNome());
                     } else {
-                        Toast.makeText(this, "Erro na selecao da pessoa", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Erro na selecao do produto", Toast.LENGTH_SHORT).show();
                     }
                     break;
             }
