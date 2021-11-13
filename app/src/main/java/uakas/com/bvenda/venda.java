@@ -66,6 +66,8 @@ public class venda extends AppCompatActivity {
                 lista = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "id = ?", new String[]{Textoid_cliente.getText().toString()});// muito cuidado usando essa funcao, qualquer coisa no campos quebra ela
                 if (lista.get(0) != null){ // protecao para caso nao exista mais o cliente com esse ID
                     pessoa = (Pessoa) lista.get(0);
+                } else {
+                    Toast.makeText(this, "pessoa nao vinculada", Toast.LENGTH_SHORT).show();
                 }
             }
             if (v.getValor() != null)
@@ -195,6 +197,12 @@ public class venda extends AppCompatActivity {
                         Textoid_cliente.setText(v.getId_cliente()+"");
                     if (v.getValor() != null)
                         Textovalor.setText(v.getValor()+"");
+                    List<EntidadeBanco> lista = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "id = ?", new String[]{Textoid_cliente.getText().toString()});// muito cuidado usando essa funcao, qualquer coisa no campos quebra ela
+                    if (lista.get(0) != null){ // protecao para caso nao exista mais o cliente com esse ID
+                        pessoa = (Pessoa) lista.get(0);
+                    } else {
+                        Toast.makeText(this, "pessoa nao vinculada", Toast.LENGTH_SHORT).show();
+                    }
                     Atualizar();
                     break;
                 case "pessoa":

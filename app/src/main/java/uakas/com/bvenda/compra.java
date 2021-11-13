@@ -126,6 +126,10 @@ public class compra extends AppCompatActivity {
                         Textoid_fornecedor.setText(c.getId_fornecedor()+"");
                     if (c.getValor() != null)
                         Textovalor.setText(c.getValor()+"");
+                    List<EntidadeBanco> lista = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "id = ?", new String[]{Textoid_fornecedor.getText().toString()});// muito cuidado usando essa funcao, qualquer coisa no campos quebra ela
+                    if (lista.get(0) != null){ // protecao para caso nao exista mais o fornecedor com esse ID
+                        pessoa = (Pessoa) lista.get(0);
+                    }
                     Atualizar();
                     break;
                 case "pessoa":
