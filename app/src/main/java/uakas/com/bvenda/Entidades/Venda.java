@@ -9,6 +9,7 @@ public class Venda implements Serializable,EntidadeBanco {
     private Integer id_cliente;
     private String descricao;
     private Float valor;
+    private Boolean concluido;
 
     @Override
     public Integer getId() {
@@ -22,6 +23,7 @@ public class Venda implements Serializable,EntidadeBanco {
         dados.put("id_cliente",id_cliente);
         dados.put("descricao",descricao);
         dados.put("valor",valor);
+        dados.put("concluido",concluido);
 
         return dados;
     }
@@ -34,9 +36,14 @@ public class Venda implements Serializable,EntidadeBanco {
         v.setId_cliente(Integer.parseInt(dados[1]));
         v.setDescricao(dados[2]);
         v.setValor(Float.parseFloat(dados[3]));
+        v.setConcluido(dados[4].equals("1")?true:false);
 
         return v;
     }
+
+    public Boolean getConcluido() { return concluido; }
+
+    public void setConcluido(Boolean concluido) { this.concluido = concluido; }
 
     public void setId(Integer id) {
         this.id = id;
@@ -68,11 +75,10 @@ public class Venda implements Serializable,EntidadeBanco {
 
     @Override
     public String toString() {
-        return "Venda{" +
-                "id=" + id +
-                ", id_cliente=" + id_cliente +
-                ", descricao='" + descricao + '\'' +
-                ", valor=" + valor +
-                '}';
+        return "Venda: " + id +
+                "\nCliente: " + id_cliente +
+                "\nDescricao: " + descricao +
+                "\nValor: " + valor+
+                "\nConcluido: "+concluido;
     }
 }

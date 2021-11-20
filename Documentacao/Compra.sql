@@ -3,5 +3,6 @@ create table compra (
 	id_fornecedor int,
 	observacao varchar(40),
 	valor decimal(10,2),
+	concluido boolean,
 	constraint fk_compra_pessoa foreign key (id_fornecedor) references pessoa(id)
 );

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class compra extends AppCompatActivity {
     private ItemCompra ic;
     private Produto produto;
     private Pessoa pessoa;
+    private Switch switchConcluido;
 
 
     @Override
@@ -57,6 +59,7 @@ public class compra extends AppCompatActivity {
         Textoquantidade = findViewById(R.id.etCompraQuantidade);
         ListaItens = findViewById(R.id.lvItensCompra);
         Textoid_produto = findViewById(R.id.etCompraProduto);
+        switchConcluido = findViewById(R.id.swCompra);
         // se clicou pra editar
         Intent it = getIntent();
         if(it.getSerializableExtra("objeto")!=null){ // verifica se foi passado algum objeto para editar
@@ -76,6 +79,8 @@ public class compra extends AppCompatActivity {
             }
             if (c.getValor() != null)
                 Textovalor.setText(c.getValor()+"");
+            if (c.getConcluido() !=null)
+                switchConcluido.setChecked(c.getConcluido());
         } else {
             c = new Compra();
         }
@@ -126,6 +131,8 @@ public class compra extends AppCompatActivity {
                         Textoid_fornecedor.setText(c.getId_fornecedor()+"");
                     if (c.getValor() != null)
                         Textovalor.setText(c.getValor()+"");
+                    if (c.getConcluido()!=null)
+                        switchConcluido.setChecked(c.getConcluido());
                     List<EntidadeBanco> lista = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "id = ?", new String[]{Textoid_fornecedor.getText().toString()});// muito cuidado usando essa funcao, qualquer coisa no campos quebra ela
                     if (lista.get(0) != null){ // protecao para caso nao exista mais o fornecedor com esse ID
                         pessoa = (Pessoa) lista.get(0);
@@ -159,6 +166,7 @@ public class compra extends AppCompatActivity {
         }
         c.setDescricao(Textodescricao.getText().toString());
         c.setValor(Float.parseFloat(Textovalor.getText().toString()));
+        c.setConcluido(switchConcluido.isChecked());
         if (!Textoid_fornecedor.getText().toString().equals("") && pessoa != null) {
             c.setId_fornecedor(pessoa.getId()); //pega da pessoa
         } else {
@@ -234,6 +242,7 @@ public class compra extends AppCompatActivity {
         Textoid_produto.setText("");
         Textoquantidade.setText("");
         Textovalor.setText("0.00");
+        switchConcluido.setChecked(false);
     }
 
     public void removerCompra (View view){

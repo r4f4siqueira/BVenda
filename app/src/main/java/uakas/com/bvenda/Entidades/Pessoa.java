@@ -91,13 +91,10 @@ public class Pessoa implements Serializable, EntidadeBanco {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", celular='" + celular + '\'' +
-                ", email='" + email + '\'' +
-                ", observacao='" + observacao + '\'' +
-                ", fornecedor=" + fornecedor +
-                '}';
+        return  id +" - "+nome+
+                "\nCelular: " +celular+
+                "\nEmail: "+email+
+                "\nObservacao: " + observacao +
+                "\nFornecedor: " + fornecedor;
     }
 }

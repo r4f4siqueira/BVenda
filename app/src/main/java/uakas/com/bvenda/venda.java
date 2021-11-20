@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class venda extends AppCompatActivity {
     private ItemVenda iv;
     private Produto produto;
     private Pessoa pessoa;
+    private Switch switchConcluido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class venda extends AppCompatActivity {
         Textoquantidade = findViewById(R.id.etVendaQuantidade);
         ListaItens = findViewById(R.id.lvItensVenda);
         Textoid_produto = findViewById(R.id.etVendaProduto);
+        switchConcluido = findViewById(R.id.swVenda);
 
         Intent it = getIntent();
         if(it.getSerializableExtra("objeto")!=null){
@@ -73,6 +76,8 @@ public class venda extends AppCompatActivity {
             }
             if (v.getValor() != null)
                 Textovalor.setText(v.getValor()+"");
+            if (v.getConcluido()!=null)
+                switchConcluido.setChecked(v.getConcluido());
         } else {
             v = new Venda();
         }
@@ -110,6 +115,7 @@ public class venda extends AppCompatActivity {
         }
         v.setDescricao(Textodescricao.getText().toString());
         v.setValor(Float.parseFloat(Textovalor.getText().toString()));
+        v.setConcluido(switchConcluido.isChecked());
         if (!Textoid_cliente.getText().toString().equals("") && pessoa != null) {
             v.setId_cliente(pessoa.getId()); //pega da pessoa
         } else {
@@ -175,6 +181,7 @@ public class venda extends AppCompatActivity {
         Textoid_produto.setText("");
         Textoquantidade.setText("");
         Textovalor.setText("0.00");
+        switchConcluido.setChecked(false);
     }
     public void removerVenda (View view){
         Venda v = new Venda();
@@ -218,6 +225,8 @@ public class venda extends AppCompatActivity {
                         Textoid_cliente.setText(v.getId_cliente()+"");
                     if (v.getValor() != null)
                         Textovalor.setText(v.getValor()+"");
+                    if (v.getConcluido()!=null)
+                        switchConcluido.setChecked(v.getConcluido());
                     List<EntidadeBanco> lista = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "id = ?", new String[]{Textoid_cliente.getText().toString()});// muito cuidado usando essa funcao, qualquer coisa no campos quebra ela
                     if (lista.get(0) != null){ // protecao para caso nao exista mais o cliente com esse ID
                         pessoa = (Pessoa) lista.get(0);

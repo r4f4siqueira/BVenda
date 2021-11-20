@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class BDSetup extends SQLiteOpenHelper {
 
     public BDSetup(Context context) {
-        super(context, "BVenda", null, 13);
+        super(context, "BVenda", null, 14);
     }
 
     @Override
@@ -39,6 +39,7 @@ public class BDSetup extends SQLiteOpenHelper {
                 "\tid_fornecedor int,\n" +
                 "\tobservacao varchar(40),\n" +
                 "\tvalor decimal(10,2),\n" +
+                "\tconcluido      boolean,\n" +
                 "\tconstraint fk_compra_pessoa foreign key (id_fornecedor) references pessoa(id)\n" +
                 ");");
         sqLiteDatabase.execSQL(sql.toString());
@@ -48,6 +49,7 @@ public class BDSetup extends SQLiteOpenHelper {
                 "\tid_cliente int,\n" +
                 "\tdescricao varchar(40),\n" +
                 "\tvalor decimal(10,2),\n" +
+                "\tconcluido      boolean,\n" +
                 "\tconstraint fk_venda_pessoa foreign key (id_cliente) references pessoa(id)\n" +
                 ");");
         sqLiteDatabase.execSQL(sql.toString());
@@ -113,7 +115,8 @@ public class BDSetup extends SQLiteOpenHelper {
                 "\tid integer primary key autoincrement not null,\n" +
                 "\tid_fornecedor int,\n" +
                 "\tobservacao varchar(40),\n" +
-                "\tvalor decimal(10,2),\n" +
+                "\tvalor decimal(10,2),\n"+
+                "\tconcluido      boolean,\n"+
                 "\tconstraint fk_compra_pessoa foreign key (id_fornecedor) references pessoa(id)\n" +
                 ");");
         sqLiteDatabase.execSQL(sql.toString());
@@ -123,6 +126,7 @@ public class BDSetup extends SQLiteOpenHelper {
                 "\tid_cliente int,\n" +
                 "\tdescricao varchar(40),\n" +
                 "\tvalor decimal(10,2),\n" +
+                "\tconcluido      boolean,\n"+
                 "\tconstraint fk_venda_pessoa foreign key (id_cliente) references pessoa(id)\n" +
                 ");");
         sqLiteDatabase.execSQL(sql.toString());
