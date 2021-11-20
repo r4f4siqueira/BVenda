@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class BDSetup extends SQLiteOpenHelper {
 
     public BDSetup(Context context) {
-        super(context, "BVenda", null, 14);
+        super(context, "BVenda", null, 12);
     }
 
     @Override
@@ -164,6 +164,67 @@ public class BDSetup extends SQLiteOpenHelper {
                 "\tconstraint fk_conta_pessoa foreign key (id_cliente) references pessoa(id)\n" +
                 ");");
         sqLiteDatabase.execSQL(sql.toString());
+    }
 
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        StringBuilder sql;
+        /*
+        sql = new StringBuilder();
+        sql.append("delete from pessoa;");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("delete from produto");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("delete from compra");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("delete from venda");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("delete from itemcompra");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("delete from itemvenda");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("delete from conta");
+        db.execSQL(sql.toString());
+        */
+
+        sql = new StringBuilder();
+        sql.append("drop table if exists pessoa;");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("drop table if exists produto");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("drop table if exists compra");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("drop table if exists venda");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("drop table if exists itemcompra");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("drop table if exists itemvenda");
+        db.execSQL(sql.toString());
+
+        sql = new StringBuilder();
+        sql.append("drop table if exists conta");
+        db.execSQL(sql.toString());
     }
 }
