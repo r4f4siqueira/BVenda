@@ -173,8 +173,10 @@ public class compra extends AppCompatActivity {
             it.putExtra("entidade", btn.getHint().toString());
             startActivityForResult(it, 205);
              */
-            setResult(RESULT_OK);
-            onBackPressed();
+            //setResult(RESULT_OK);
+            //onBackPressed();
+            Reset();
+            Toast.makeText(this, "Compra salva com sucesso!!!", Toast.LENGTH_SHORT).show();
         } else {
             Textoid.setText(BDDados.getlastid("compra",new String[]{"id"},getApplicationContext())+"");
         }
@@ -211,6 +213,27 @@ public class compra extends AppCompatActivity {
 
             Atualizar();
         }
+    }
+
+    private void Reset (){ // reseta a tela para uma nova venda/compra
+        //limpando a lista de itens
+        List listavazia = new LinkedList();
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listavazia);
+        ListaItens.setAdapter(adapter);
+
+        //limpando as entidades
+        c = null;
+        ic = null;
+        produto = null;
+        pessoa = null;
+
+        //limpando os campos
+        Textoid.setText("CodCom");
+        Textoid_fornecedor.setText("");
+        Textodescricao.setText("");
+        Textoid_produto.setText("");
+        Textoquantidade.setText("");
+        Textovalor.setText("0.00");
     }
 
     public void removerCompra (View view){

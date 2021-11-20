@@ -61,7 +61,7 @@ public class produto extends AppCompatActivity {
             p.setId(Integer.parseInt(TextoId.getText().toString()));
         }
         p.setNome(TextoNome.getText().toString()); // preenche a classe com o que ta escrito
-        p.setAtivo(Switchativo.getShowText());
+        p.setAtivo(Switchativo.isChecked());
         p.setValor(Float.parseFloat(Textovalor.getText().toString()));
         p.setQtd_estoque(Float.parseFloat(Textoqtd_estoque.getText().toString()));
 

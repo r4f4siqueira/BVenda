@@ -37,7 +37,7 @@ public class Produto implements Serializable,EntidadeBanco {
         //id = Integer.parseInt(dados[0]); //era assim
         p.setId(Integer.parseInt(dados[0])); // ficou assim
         p.setNome(dados[1]);
-        p.setAtivo(Boolean.parseBoolean(dados[2]));
+        p.setAtivo(dados[2].equals("1")?true:false);
         if (dados[3] != null){
             p.setValor(Float.parseFloat(dados[3]));
         }

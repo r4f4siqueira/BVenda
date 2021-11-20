@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import uakas.com.bvenda.Banco.BDDados;
@@ -116,8 +117,8 @@ public class venda extends AppCompatActivity {
         }
         BDDados.Salvar(v,getApplicationContext()); //funciona se o metodo de salvar tiver rodando, tem q fazer isso em todas as telas
         if (view != null) {
-            setResult(RESULT_OK);
-            onBackPressed();
+            Reset();
+            Toast.makeText(this, "Venda salva com sucesso!!!", Toast.LENGTH_SHORT).show();
         } else {
             Textoid.setText(BDDados.getlastid("venda",new String[]{"id"},getApplicationContext())+"");
         }
@@ -155,6 +156,26 @@ public class venda extends AppCompatActivity {
         }
     }
 
+    private void Reset (){ // reseta a tela para uma nova venda/compra
+        //limpando a lista de itens
+        List listavazia = new LinkedList();
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listavazia);
+        ListaItens.setAdapter(adapter);
+
+        //limpando as entidades
+        v = null;
+        iv = null;
+        produto = null;
+        pessoa = null;
+
+        //limpando os campos
+        Textoid.setText("CodVenda");
+        Textoid_cliente.setText("");
+        Textodescricao.setText("");
+        Textoid_produto.setText("");
+        Textoquantidade.setText("");
+        Textovalor.setText("0.00");
+    }
     public void removerVenda (View view){
         Venda v = new Venda();
         if(!Textoid.getText().toString().equals("CodVenda")){

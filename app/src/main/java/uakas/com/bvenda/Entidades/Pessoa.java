@@ -40,7 +40,7 @@ public class Pessoa implements Serializable, EntidadeBanco {
         p.setCelular(dados[2]);
         p.setEmail(dados[3]);
         p.setObservacao(dados[4]);
-        p.setFornecedor(Boolean.parseBoolean(dados[5]));
+        p.setFornecedor(dados[5].equals("1")?true:false);
 
         return p;
     }
