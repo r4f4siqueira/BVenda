@@ -30,13 +30,20 @@ public class Conta implements Serializable,EntidadeBanco {
 
     @Override
     public EntidadeBanco setDados(String[] dados) {
-        id = Integer.parseInt(dados[0]);
-        id_venda = Integer.parseInt(dados[1]);
-        id_compra= Integer.parseInt(dados[2]);
-        id_cliente =Integer.parseInt(dados[3]);
-        valor = Float.parseFloat(dados[4]);
+        Conta c = new Conta();
 
-        return this;
+        if (dados[0] != null)
+            c.setId(Integer.parseInt(dados[0]));
+        if (dados[1] != null)
+            c.setId_venda(Integer.parseInt(dados[1]));
+        if (dados[2] != null)
+            c.setId_compra(Integer.parseInt(dados[2]));
+        if (dados[3] != null)
+            c.setId_cliente(Integer.parseInt(dados[3]));
+        if (dados[4] != null)
+            c.setValor(Float.parseFloat(dados[4]));
+
+        return c;
     }
 
     public void setId(Integer id) {

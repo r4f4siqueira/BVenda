@@ -32,11 +32,16 @@ public class Compra implements Serializable,EntidadeBanco {
     public EntidadeBanco setDados(String[] dados) {
         Compra c = new Compra();
 
-        c.setId(Integer.parseInt(dados[0]));
-        c.setId_fornecedor(Integer.parseInt(dados[1]));
-        c.setDescricao(dados[2]);
-        c.setValor(Float.parseFloat(dados[3]));
-        c.setConcluido(dados[4].equals("1")?true:false);
+        if (dados[0] != null)
+            c.setId(Integer.parseInt(dados[0]));
+        if (dados[1] != null)
+            c.setId_fornecedor(Integer.parseInt(dados[1]));
+        if (dados[2] != null)
+            c.setDescricao(dados[2]);
+        if (dados[3] != null)
+            c.setValor(Float.parseFloat(dados[3]));
+        if (dados[4] != null)
+            c.setConcluido(dados[4].equals("1")?true:false);
 
         return c;
     }

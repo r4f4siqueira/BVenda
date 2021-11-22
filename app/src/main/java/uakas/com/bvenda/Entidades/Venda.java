@@ -32,11 +32,16 @@ public class Venda implements Serializable,EntidadeBanco {
     public EntidadeBanco setDados(String[] dados) {
         Venda v = new Venda();
 
-        v.setId(Integer.parseInt(dados[0]));
-        v.setId_cliente(Integer.parseInt(dados[1]));
-        v.setDescricao(dados[2]);
-        v.setValor(Float.parseFloat(dados[3]));
-        v.setConcluido(dados[4].equals("1")?true:false);
+        if (dados[0] != null)
+            v.setId(Integer.parseInt(dados[0]));
+        if (dados[1] != null)
+            v.setId_cliente(Integer.parseInt(dados[1]));
+        if (dados[2] != null)
+            v.setDescricao(dados[2]);
+        if (dados[3] != null)
+            v.setValor(Float.parseFloat(dados[3]));
+        if (dados[4] != null)
+            v.setConcluido(dados[4].equals("1")?true:false);
 
         return v;
     }

@@ -42,7 +42,7 @@
                 android:id="@+id/btPessoaPesquisa"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="68dp"
                 android:backgroundTint="#00FFFFFF"
                 android:hint="conta"
                 app:icon="@drawable/ic_baseline_search_24"
@@ -64,7 +64,7 @@
                 android:id="@+id/tvPessoaCod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="78dp"
+                android:layout_marginTop="70dp"
                 android:text="cod"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -170,13 +170,10 @@
 
             <Button
                 android:id="@+id/btPessoaMenu"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
                 app:icon="@drawable/ic_baseline_menu_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/botaomenu" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

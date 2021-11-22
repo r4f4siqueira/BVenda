@@ -2,87 +2,211 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFEB3B"
-    tools:context=".menuLateral"
-    tools:visibility="visible">
+    android:orientation="vertical"
+    tools:context=".menuLateral">
 
-    <Button
-        android:id="@+id/btMenuVenda"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#DAC50D"
-        android:hint="venda"
-        android:onClick="listar"
-        android:text="Vendas"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btMenuCompra"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#DAC50D"
-        android:hint="compra"
-        android:onClick="listar"
-        android:text="Compras"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btMenuVenda" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btMenuConta"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#DAC50D"
-        android:hint="conta"
-        android:onClick="listar"
-        android:text="Conta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btMenuCompra" />
+            <TextView
+                android:id="@+id/tvMenuCadastro2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/archivo_black"
+                android:paddingTop="10dp"
+                android:text="Nova Venda/Compra"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/btMenuProduto"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#DAC50D"
-        android:hint="produto"
-        android:onClick="listar"
-        android:text="Produtos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btMenuConta" />
+            <Button
+                android:id="@+id/btMenuVenda2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="venda"
+                android:onClick="cadastrar"
+                android:text="Venda"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="106dp"
+                tools:layout_editor_absoluteY="10dp" />
 
-    <Button
-        android:id="@+id/btMenuCliente"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#DAC50D"
-        android:hint="cliente"
-        android:onClick="listar"
-        android:text="Clientes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btMenuProduto" />
+            <Button
+                android:id="@+id/btMenuCompra2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="compra"
+                android:onClick="cadastrar"
+                android:text="Compra"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="92dp"
+                tools:layout_editor_absoluteY="68dp" />
 
-    <Button
-        android:id="@+id/btMenuFornecedor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#DAC50D"
-        android:hint="fornecedor"
-        android:onClick="listar"
-        android:text="Fornecedores"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btMenuCliente" />
+            <TextView
+                android:id="@+id/tvMenuListagem"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/archivo_black"
+                android:paddingTop="10dp"
+                android:text="Listagens"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btMenuVenda"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="venda"
+                android:onClick="listar"
+                android:text="Vendas"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="106dp"
+                tools:layout_editor_absoluteY="10dp" />
+
+            <Button
+                android:id="@+id/btMenuCompra"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="compra"
+                android:onClick="listar"
+                android:text="Compras"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="92dp"
+                tools:layout_editor_absoluteY="68dp" />
+
+            <Button
+                android:id="@+id/btMenuConta"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="conta"
+                android:onClick="listar"
+                android:text="Conta"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="112dp"
+                tools:layout_editor_absoluteY="126dp" />
+
+            <Button
+                android:id="@+id/btMenuProduto"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="produto"
+                android:onClick="listar"
+                android:text="Produtos"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="184dp" />
+
+            <Button
+                android:id="@+id/btMenuCliente"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="cliente"
+                android:onClick="listar"
+                android:text="Clientes"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="242dp" />
+
+            <Button
+                android:id="@+id/btMenuFornecedor"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="fornecedor"
+                android:onClick="listar"
+                android:text="Fornecedores"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="299dp" />
+
+            <TextView
+                android:id="@+id/tvMenuCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/archivo_black"
+                android:paddingTop="10dp"
+                android:text="Cadastros de entidades"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btMenuConta2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="conta"
+                android:onClick="cadastrar"
+                android:text="Conta"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="112dp"
+                tools:layout_editor_absoluteY="126dp" />
+
+            <Button
+                android:id="@+id/btMenuProduto2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="produto"
+                android:onClick="cadastrar"
+                android:text="Produtos"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="184dp" />
+
+            <Button
+                android:id="@+id/btMenuCliente2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#FFEF5E"
+                android:elevation="10dp"
+                android:hint="cliente"
+                android:onClick="cadastrar"
+                android:text="Pessoas"
+                android:textAlignment="center"
+                android:textColor="#5E5858"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="242dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

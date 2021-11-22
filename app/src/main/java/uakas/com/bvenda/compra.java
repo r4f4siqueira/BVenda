@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -36,7 +37,7 @@ public class compra extends AppCompatActivity {
     private EditText Textoid_fornecedor;
     private EditText Textodescricao;
     private TextView Textovalor;
-    private TextView Textoquantidade;
+    private EditText Textoquantidade;
     private ListView ListaItens;
     private List<ItemCompra> dados;
     private ArrayAdapter<String> adapter;
@@ -46,6 +47,10 @@ public class compra extends AppCompatActivity {
     private Produto produto;
     private Pessoa pessoa;
     private Switch switchConcluido;
+    private Button BotaoSalvar;
+    private Button BotaoSalvarItem;
+    private Button BotaoPesquisarFornecedor;
+    private Button BotaoPesquisarProduto;
 
 
     @Override
@@ -60,6 +65,11 @@ public class compra extends AppCompatActivity {
         ListaItens = findViewById(R.id.lvItensCompra);
         Textoid_produto = findViewById(R.id.etCompraProduto);
         switchConcluido = findViewById(R.id.swCompra);
+        //botoes
+        BotaoSalvar = findViewById(R.id.btCompraGerar);
+        BotaoSalvarItem = findViewById(R.id.btCompraAddItem);
+        BotaoPesquisarFornecedor = findViewById(R.id.btCompraPesquisaFornecedor);
+        BotaoPesquisarProduto = findViewById(R.id.btCompraPesquisaProduto);
         // se clicou pra editar
         Intent it = getIntent();
         if(it.getSerializableExtra("objeto")!=null){ // verifica se foi passado algum objeto para editar
@@ -79,9 +89,37 @@ public class compra extends AppCompatActivity {
             }
             if (c.getValor() != null)
                 Textovalor.setText(c.getValor()+"");
-            if (c.getConcluido() !=null)
+            if (c.getConcluido() !=null){
                 switchConcluido.setChecked(c.getConcluido());
+                if(c.getConcluido()){// verifica se a compra está concluida
+                    //desativando botoes
+                    BotaoSalvar.setClickable(false);
+                    BotaoSalvarItem.setClickable(false);
+                    BotaoPesquisarProduto.setClickable(false);
+                    BotaoPesquisarFornecedor.setClickable(false);
+
+                    //desativando campos de texto
+                    Textoid_fornecedor.setFocusable(false);
+                    Textoid_fornecedor.setClickable(false);
+
+                    Textodescricao.setFocusable(false);
+                    Textodescricao.setClickable(false);
+
+                    Textoid_produto.setFocusable(false);
+                    Textoid_produto.setClickable(false);
+
+                    Textoquantidade.setFocusable(false);
+                    Textoquantidade.setClickable(false);
+
+                    //desativando interacao com a lista de itens
+                    ListaItens.setClickable(false);
+                    ListaItens.setEnabled(false);
+
+                    switchConcluido.setClickable(true);
+                }
+            }
         } else {
+            Reset();
             c = new Compra();
         }
 
@@ -96,6 +134,15 @@ public class compra extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 return false;
+            }
+        });
+
+        switchConcluido.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (!switchConcluido.isChecked()) {
+                    Reset();
+                }
             }
         });
     }
@@ -131,8 +178,35 @@ public class compra extends AppCompatActivity {
                         Textoid_fornecedor.setText(c.getId_fornecedor()+"");
                     if (c.getValor() != null)
                         Textovalor.setText(c.getValor()+"");
-                    if (c.getConcluido()!=null)
+                    if (c.getConcluido()!=null) {
                         switchConcluido.setChecked(c.getConcluido());
+                        if(c.getConcluido()) {// verifica se a compra está concluida
+                            //desativando botoes
+                            BotaoSalvar.setClickable(false);
+                            BotaoSalvarItem.setClickable(false);
+                            BotaoPesquisarProduto.setClickable(false);
+                            BotaoPesquisarFornecedor.setClickable(false);
+
+                            //desativando campos de texto
+                            Textoid_fornecedor.setFocusable(false);
+                            Textoid_fornecedor.setClickable(false);
+
+                            Textodescricao.setFocusable(false);
+                            Textodescricao.setClickable(false);
+
+                            Textoid_produto.setFocusable(false);
+                            Textoid_produto.setClickable(false);
+
+                            Textoquantidade.setFocusable(false);
+                            Textoquantidade.setClickable(false);
+
+                            //desativando interacao com a lista de itens
+                            ListaItens.setClickable(false);
+                            ListaItens.setEnabled(false);
+
+                            switchConcluido.setClickable(true);
+                        }
+                    }
                     List<EntidadeBanco> lista = BDDados.Listar(new Pessoa(), getApplicationContext(), null, "id = ?", new String[]{Textoid_fornecedor.getText().toString()});// muito cuidado usando essa funcao, qualquer coisa no campos quebra ela
                     if (lista.get(0) != null){ // protecao para caso nao exista mais o fornecedor com esse ID
                         pessoa = (Pessoa) lista.get(0);
@@ -164,9 +238,11 @@ public class compra extends AppCompatActivity {
         if(!Textoid.getText().toString().equals("CodCom")) {
             c.setId(Integer.parseInt(Textoid.getText().toString()));
         }
-        c.setDescricao(Textodescricao.getText().toString());
+        String desc = Textodescricao.getText().toString();
+        if (desc != null)
+            c.setDescricao(desc);
         c.setValor(Float.parseFloat(Textovalor.getText().toString()));
-        c.setConcluido(switchConcluido.isChecked());
+        c.setConcluido(true);
         if (!Textoid_fornecedor.getText().toString().equals("") && pessoa != null) {
             c.setId_fornecedor(pessoa.getId()); //pega da pessoa
         } else {
@@ -195,6 +271,11 @@ public class compra extends AppCompatActivity {
         dados = BDDados.Listar(new ItemCompra(), getApplicationContext(), null, "id_compra = ?", new String[]{"" + Textoid.getText().toString()});
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, dados);
         ListaItens.setAdapter(adapter);
+        Float soma = 0f;
+        for (int i = 0;i<dados.size();i++){
+            soma += dados.get(i).getValor()*dados.get(i).getQuantidade();
+        }
+        Textovalor.setText(soma+"");
     }
 
     public void salvarItemCompra(View view){
@@ -230,7 +311,7 @@ public class compra extends AppCompatActivity {
         ListaItens.setAdapter(adapter);
 
         //limpando as entidades
-        c = null;
+        c = new Compra();
         ic = null;
         produto = null;
         pessoa = null;
@@ -243,6 +324,36 @@ public class compra extends AppCompatActivity {
         Textoquantidade.setText("");
         Textovalor.setText("0.00");
         switchConcluido.setChecked(false);
+
+        //reativando botoes
+        BotaoSalvar.setClickable(true);
+        BotaoSalvarItem.setClickable(true);
+        BotaoPesquisarProduto.setClickable(true);
+        BotaoPesquisarFornecedor.setClickable(true);
+
+        //reativando campos de texto
+        Textoid_fornecedor.setFocusable(true);
+        Textoid_fornecedor.setClickable(true);
+        Textoid_fornecedor.setEnabled(true);
+
+        Textodescricao.setFocusable(true);
+        Textodescricao.setClickable(true);
+        Textodescricao.setEnabled(true);
+
+        Textoid_produto.setFocusable(true);
+        Textoid_produto.setClickable(true);
+        Textoid_produto.setEnabled(true);
+
+
+        Textoquantidade.setFocusable(true);
+        Textoquantidade.setClickable(true);
+        Textoquantidade.setEnabled(true);
+
+        //reativando interacao com a lista de itens
+        ListaItens.setClickable(true);
+        ListaItens.setEnabled(true);
+
+        switchConcluido.setClickable(false);
     }
 
     public void removerCompra (View view){

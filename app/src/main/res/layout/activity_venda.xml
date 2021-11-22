@@ -216,16 +216,12 @@
 
             <Button
                 android:id="@+id/btVendaMenu"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
                 android:onClick="menul"
                 app:icon="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/textView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/botaomenu"/>
 
             <Button
                 android:id="@+id/btVendaCancelar"
@@ -285,15 +281,11 @@
                 android:id="@+id/swVenda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="245dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="33dp"
                 android:clickable="true"
                 android:text="Concluído"
-                app:layout_constraintBottom_toTopOf="@+id/btVendaPesquisaVenda"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btVendaMenu"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

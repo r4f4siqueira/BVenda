@@ -32,11 +32,16 @@ public class ItemCompra implements Serializable,EntidadeBanco {
     public EntidadeBanco setDados(String[] dados) { // nao tem um jeito facil de fazer isso aqui nao quebrar quando um desses valores for nulo???
         ItemCompra ic = new ItemCompra();
 
-        ic.setId(Integer.parseInt(dados[0]));
-        ic.setId_compra(Integer.parseInt(dados[1]));
-        ic.setId_produto(Integer.parseInt(dados[2]));
-        ic.setQuantidade(Float.parseFloat(dados[3]));
-        ic.setValor(Float.parseFloat(dados[4]));
+        if (dados[0] != null)
+            ic.setId(Integer.parseInt(dados[0]));
+        if (dados[1] != null)
+            ic.setId_compra(Integer.parseInt(dados[1]));
+        if (dados[2] != null)
+            ic.setId_produto(Integer.parseInt(dados[2]));
+        if (dados[3] != null)
+            ic.setQuantidade(Float.parseFloat(dados[3]));
+        if (dados[4] != null)
+            ic.setValor(Float.parseFloat(dados[4]));
 
         return ic;
     }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="botaomenu">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:backgroundTint">#00FFFFFF</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="aaaaaaa" />
+</resources>

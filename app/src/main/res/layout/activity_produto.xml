@@ -10,14 +10,12 @@
 
     <Button
         android:id="@+id/btProdutoMenu"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+
         android:onClick="menul"
         app:icon="@drawable/ic_baseline_menu_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/botaomenu"/>
 
     <EditText
         android:id="@+id/etProdutoNome"
@@ -135,11 +133,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="5dp"
         android:text="Ativo:"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="275dp" />
+        app:layout_constraintEnd_toStartOf="@+id/swProdutoAtivo"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btProdutoExcluir"

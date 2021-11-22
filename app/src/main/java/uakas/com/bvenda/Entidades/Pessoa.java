@@ -35,12 +35,18 @@ public class Pessoa implements Serializable, EntidadeBanco {
     public EntidadeBanco setDados(String[] dados) {
         Pessoa p = new Pessoa();
 
-        p.setId(Integer.parseInt(dados[0]));
-        p.setNome(dados[1]);
-        p.setCelular(dados[2]);
-        p.setEmail(dados[3]);
-        p.setObservacao(dados[4]);
-        p.setFornecedor(dados[5].equals("1")?true:false);
+        if (dados[0] != null)
+            p.setId(Integer.parseInt(dados[0]));
+        if (dados[1] != null)
+            p.setNome(dados[1]);
+        if (dados[2] != null)
+            p.setCelular(dados[2]);
+        if (dados[3] != null)
+            p.setEmail(dados[3]);
+        if (dados[4] != null)
+            p.setObservacao(dados[4]);
+        if (dados[5] != null)
+            p.setFornecedor(dados[5].equals("1")?true:false);
 
         return p;
     }

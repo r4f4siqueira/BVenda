@@ -179,6 +179,11 @@ public class venda extends AppCompatActivity {
         dados = BDDados.Listar(new ItemVenda(), getApplicationContext(), null, "id_venda = ?", new String[]{"" + Textoid.getText().toString()});
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, dados);
         ListaItens.setAdapter(adapter);
+        Float soma = 0f;
+        for (int i = 0;i<dados.size();i++){
+            soma += dados.get(i).getValor_un()*dados.get(i).getQuantidade();
+        }
+        Textovalor.setText(soma+"");
     }
 
     public void salvarItemVenda(View view){

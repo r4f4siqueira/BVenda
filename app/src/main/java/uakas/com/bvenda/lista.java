@@ -65,14 +65,10 @@ public class lista extends AppCompatActivity {
         lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(classe.getClass().getSimpleName().equals("venda")||classe.getClass().getSimpleName().equals("compra")){
-                    Toast.makeText(uakas.com.bvenda.lista.this, "Nao é possivel editar compras e vendas!", Toast.LENGTH_SHORT).show();
-                }else {
-                    //aqui dentro chama a tela de cadastro do objeto quando clica em cima dele
-                    Intent it = new Intent(uakas.com.bvenda.lista.this, classe.getClass());
-                    it.putExtra("objeto", (Serializable) dados.get(i));
-                    startActivityForResult(it, 357); // n sei pq quando atualiza uma entidade existente ela pula essa tela e volta pra anterior
-                }
+                //aqui dentro chama a tela de cadastro do objeto quando clica em cima dele
+                Intent it = new Intent(uakas.com.bvenda.lista.this, classe.getClass());
+                it.putExtra("objeto", (Serializable) dados.get(i));
+                startActivityForResult(it, 357); // n sei pq quando atualiza uma entidade existente ela pula essa tela e volta pra anterior
                 return false;
             }
         });
@@ -189,6 +185,10 @@ public class lista extends AppCompatActivity {
         if (requestCode == 357 && resultCode == RESULT_OK) { // clicou no objeto para editar
             Atualizar();
             Toast.makeText(this, "Item Editado com sucesso", Toast.LENGTH_SHORT).show();
+        }
+        if (requestCode == 357 && resultCode == RESULT_CANCELED) { // clicou no objeto para editar
+            Atualizar();
+            Toast.makeText(this, "Operacao cancelada!", Toast.LENGTH_SHORT).show();
         }
     }
 }
